@@ -11,7 +11,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # options are documented and commented below. For a complete reference,
   # please see the online documentation at vagrantup.com.
 
-  config.vm.hostname = 'code-guardian-bbc'
+  config.vm.hostname = 'code-guardian-mine'
 
   # Set the version of chef to install using the vagrant-omnibus plugin
   # NOTE: You will need to install the vagrant-omnibus plugin:
@@ -38,8 +38,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
+
+  # jenkins
   config.vm.network "forwarded_port", guest: 8080, host: 8080
+  # mysql
   config.vm.network "forwarded_port", guest: 3306, host: 3306
+  # sonarqube
   config.vm.network "forwarded_port", guest: 9000, host: 9000
 
   # Share an additional folder to the guest VM. The first argument is
@@ -47,8 +51,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
   config.vm.synced_folder "../data", "/vagrant_data"
-  config.vm.synced_folder "../../repo/services", "/bbc/repo/services"
-  config.vm.synced_folder "../../certs", "/bbc/certs"
+  config.vm.synced_folder "../../repo/services", "/repo/services"
+  config.vm.synced_folder "../../certs", "/repo/certs"
   #https://lucamerello.wordpress.com/2014/08/06/solaris-10-how-to-install-sonarqube-and-perform-a-basic-configuration/
 
   # Provider-specific configuration so you can fine-tune various

@@ -1,10 +1,10 @@
 # code-guardian-cookbook
 
-TODO: Enter the cookbook description here.
+Enable a local VM for sonar/jenkins.
 
 ## Supported Platforms
 
-TODO: List your supported platforms.
+Tested on windows/mac.
 
 ## Attributes
 
@@ -39,4 +39,4 @@ Include `code-guardian` in your node's `run_list`:
 
 ## License and Authors
 
-Author:: YOUR_NAME (<YOUR_EMAIL>)
+Author:: David Navarro (davengeo@yahoo.es)
